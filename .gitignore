@@ -1,0 +1,10 @@
+# OS / IDE
+*.DS_Store
+*.swp
+*.idea/
+*.vscode/
+
+# Docker-related
+.env
+docker-compose.override.yml
+*.log

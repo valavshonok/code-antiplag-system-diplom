@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+celery[redis]
+redis
+
+
+sqlalchemy
+psycopg2-binary
+psycopg[binary]
+
+
+mistralai==1.9.11
+instructor
+pydantic
+
+requests
+python-multipart

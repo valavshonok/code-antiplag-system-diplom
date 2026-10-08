@@ -1,0 +1,32 @@
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    clang-format \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY task-runner/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install pybind11
+RUN pip install tree-sitter tree-sitter-cpp \
+    tree-sitter-python black
+
+COPY cpp_engine/CMakeLists.txt ./cpp_engine/
+COPY cpp_engine/comparison_engine.cpp ./cpp_engine/
+
+RUN cd cpp_engine && \
+    mkdir build && cd build && \
+    cmake .. \
+      -DCMAKE_PREFIX_PATH="$(python -m pybind11 --cmakedir)" \
+      -DPYBIND11_FINDPYTHON=ON && \
+    make
+
+RUN cp cpp_engine/build/comparison_engine*.so \
+    /usr/local/lib/python3.11/site-packages/
+
+COPY task-runner/ .
+
+ENV PYTHONUNBUFFERED=1

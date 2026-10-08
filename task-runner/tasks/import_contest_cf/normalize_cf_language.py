@@ -1,0 +1,40 @@
+
+def normalize_cf_language(lang: str) -> str:
+    language_map = {
+        "gnu c11": "cpp",
+        "c++17 (gcc 7-32)": "cpp",
+        "c++20 (gcc 13-64)": "cpp",
+        "c++23 (gcc 14-64, msys2)": "cpp",
+        "c# 8": "csharp",
+        "c# 10": "csharp",
+        "c# 13": "csharp",
+        "mono c#": "csharp",
+        "d": "d",
+        "f# 9": "fsharp",
+        "go": "go",
+        "haskell": "haskell",
+        "java 21": "java",
+        "java 8": "java",
+        "kotlin 1.7": "kotlin",
+        "kotlin 1.9": "kotlin",
+        "kotlin 2.2": "kotlin",
+        "ocaml": "ocaml",
+        "delphi": "pascal",
+        "fpc": "pascal",
+        "pascalabc.net": "pascal",
+        "perl": "perl",
+        "php": "php",
+        "python 2": "py",
+        "python 3": "py",
+        "pypy 2": "py",
+        "pypy 3": "py",
+        "pypy 3-64": "py",
+        "ruby 3": "ruby",
+        "rust 2021": "rust",
+        "rust 2024": "rust",
+        "scala": "scala",
+        "javascript": "js",
+        "node.js": "js"
+    }
+    lang_lower = lang.lower().strip()
+    return language_map.get(lang_lower, "unknown")

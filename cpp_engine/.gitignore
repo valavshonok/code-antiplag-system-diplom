@@ -1,0 +1,32 @@
+# =========================
+# BUILD (CMake / C++)
+# =========================
+build/
+cmake-build-*/
+out/
+Debug/
+Release/
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+*.lib
+*.exp
+
+# pybind11 python extension
+*.pyd
+
+# =========================
+# PYTHON CACHE
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# pytest
+.pytest_cache/
+.cache/
+coverage.xml
+htmlcov/

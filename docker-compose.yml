@@ -1,0 +1,82 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+
+  db:
+    image: postgres:16
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: diplom
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+
+  pgadmin:
+    image: dpage/pgadmin4:7.2
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@diplom.local"
+      PGADMIN_DEFAULT_PASSWORD: "admin123"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    restart: unless-stopped
+
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: always
+
+  task-runner:
+    container_name: task-runner
+    build:
+      context: .
+      dockerfile: Dockerfile.task-runner
+    command: uvicorn app:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./task-runner:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - db
+
+  worker:
+    container_name: worker
+    build:
+      context: .
+      dockerfile: Dockerfile.task-runner
+    command: celery -A celery_app worker --loglevel=info
+    volumes:
+      - ./task-runner:/app
+    depends_on:
+      - redis
+      - db
+
+volumes:
+  postgres-data:
+  pgadmin_data:
