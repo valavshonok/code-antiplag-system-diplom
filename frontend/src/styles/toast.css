@@ -1,0 +1,32 @@
+.Toastify__progress-bar--success {
+  background: var(--color-liquid-green) !important;
+}
+
+.Toastify__toast--success .Toastify__toast-icon svg path {
+  fill: var(--color-liquid-green) !important;
+}
+
+.Toastify__progress-bar--error {
+  background: var(--color-liquid-red) !important;
+}
+
+.Toastify__toast--error .Toastify__toast-icon svg path {
+  fill: var(--color-liquid-red) !important;
+}
+
+.Toastify__progress-bar--success {
+  background: var(--color-liquid-green) !important;
+}
+
+.Toastify__toast--success .Toastify__toast-icon svg path {
+  fill: var(--color-liquid-green) !important;
+}
+
+.Toastify__toast {
+  background: var(--color-liquid-lighter) !important;
+  color: var(--color-liquid-white);
+}
+
+.Toastify__toast > button > svg {
+  fill: var(--color-liquid-white);
+}

@@ -1,0 +1,62 @@
+@import "tailwindcss/base";
+
+@layer base {
+  :root[data-theme~="dark"] {
+    --color-liquid-brightmain: #00dbd9;
+    --color-liquid-darkmain: #075867;
+    --color-liquid-darker: #141515;
+    --color-liquid-background: #202222;
+    --color-liquid-lighter: #2a2e2f;
+    --color-liquid-white: #edf6f7;
+    --color-liquid-red: #f13e5f;
+    --color-liquid-green: #10be59;
+    --color-liquid-light: #576466;
+    --color-liquid-orange: #ff951b;
+    --color-liquid-scrollbar: #576466;
+    --color-liquid-scrollbar-dark: #2a2e2f;
+
+    --color-liquid-border: #2a2e2f;
+
+    --color-liquid-auth-text: #edf6f7;
+    --color-liquid-auth-border: #2a2e2f;
+    --color-liquid-auth-background: #202222;
+
+    --color-liquid-input-text: #edf6f7;
+    --color-liquid-input-border: transparent;
+
+    --color-liquid-button-text: #edf6f7;
+
+    --color-liquid-modal-text: #edf6f7;
+    --color-liquid-modal-border: #2a2e2f;
+    --color-liquid-modal-background: #202222;
+    --color-liquid-modal-closeicon: #454545;
+
+    --color-liquid-processes-text: #edf6f7;
+    --color-liquid-processes-border: #2a2e2f;
+    --color-liquid-processes-background: #202222;
+
+    /* comparisons */
+
+    --color-liquid-comparisons-text: #edf6f7;
+    --color-liquid-comparisons-plagiat0: #edf6f7;
+    --color-liquid-comparisons-plagiat1: #fde047;
+    --color-liquid-comparisons-plagiat2: #facc15;
+    --color-liquid-comparisons-plagiat3: #f59e0b;
+    --color-liquid-comparisons-plagiat4: #f97316;
+    --color-liquid-comparisons-plagiat5: #ef4444;
+    --color-liquid-comparisons-plagiat6: #dc2626;
+    --color-liquid-comparisons-border: #2a2e2f;
+    --color-liquid-comparisons-rangebg: #374151;
+
+    --color-liquid-comparisons-plagtext: #ff0000;
+    --color-liquid-comparisons-plagborder: #9c3333;
+    --color-liquid-comparisons-plagbg: #833d3d;
+
+    --color-liquid-comparisons-hoverplagtext: #ff6666;
+    --color-liquid-comparisons-hoverplagborder: #9c3333;
+    --color-liquid-comparisons-hoverplagbg: #933838;
+
+    --color-liquid-comparisons-diffred: #7f1d1d;
+    --color-liquid-comparisons-diffgreen: #14532d;
+  }
+}

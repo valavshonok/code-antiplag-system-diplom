@@ -1,0 +1,69 @@
+@import "tailwindcss/base";
+
+@layer base {
+  :root {
+    --color-liquid-brightmain: #075867;
+    --color-liquid-darkmain: #00dbd9;
+    --color-liquid-darker: #f8fbfb;
+    --color-liquid-background: #edf6f7;
+    --color-liquid-lighter: #ffffff;
+    --color-liquid-white: #242525;
+    --color-liquid-red: #e84d68;
+    --color-liquid-green: #16a34a;
+    --color-liquid-light: #6b7a7d;
+    --color-liquid-orange: #f59e0b;
+    --color-liquid-scrollbar: #b0f8ff;
+    --color-liquid-scrollbar-dark: #22b3cc;
+
+    --color-liquid-border: #b0f8ff;
+
+    --color-liquid-auth-text: #181818;
+    --color-liquid-auth-border: #b0f8ff;
+    --color-liquid-auth-background: #f5feff;
+
+    /* input */
+
+    --color-liquid-input-text: #000000;
+    --color-liquid-input-border: #b0f8ff;
+
+    --color-liquid-button-text: #edf6f7;
+
+    /* modal */
+
+    --color-liquid-modal-text: #181818;
+    --color-liquid-modal-border: #b0f8ff;
+    --color-liquid-modal-background: #f5feff;
+    --color-liquid-modal-closeicon: #a1e1e7;
+
+    /* processes */
+
+    --color-liquid-processes-text: #181818;
+    --color-liquid-processes-border: #b0f8ff;
+    --color-liquid-processes-background: #f5feff;
+
+    /* comparisons */
+
+    --color-liquid-comparisons-text: #242525;
+    --color-liquid-comparisons-plagiat0: #c8c8c8;
+    --color-liquid-comparisons-plagiat1: #ff6a00;
+    --color-liquid-comparisons-plagiat2: #ff6a00;
+    --color-liquid-comparisons-plagiat3: #ff2929;
+    --color-liquid-comparisons-plagiat4: #ff2929;
+    --color-liquid-comparisons-plagiat5: #ff0000;
+    --color-liquid-comparisons-plagiat6: #ff0000;
+
+    --color-liquid-comparisons-border: #b0f8ff;
+    --color-liquid-comparisons-rangebg: #dbdbdb;
+
+    --color-liquid-comparisons-plagtext: #ff0000;
+    --color-liquid-comparisons-plagborder: #fdadad;
+    --color-liquid-comparisons-plagbg: #ffcfcf;
+
+    --color-liquid-comparisons-hoverplagtext: #ff0000;
+    --color-liquid-comparisons-hoverplagborder: #ffa2a2;
+    --color-liquid-comparisons-hoverplagbg: #ffb8b8;
+
+    --color-liquid-comparisons-diffred: #f19999;
+    --color-liquid-comparisons-diffgreen: #86f4b2;
+  }
+}
